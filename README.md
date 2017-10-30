@@ -79,6 +79,20 @@ Therefore, we do not recommend using this shortcut.
     the middle of a line).
   - `escape`          The escaping function used with `<%=` construct. It is
     used in rendering and is `.toString()`ed in the generation of client functions. (By default escapes XML).
+ 
+## Options(David's hacking)
+  - `customPrefix`    The use customPrefix(eg: '{') as starting tag(hard coded to '<') in template.
+  - `customSuffix`    The use customPrefix(eg: '}') as starting tag(hard coded to '>') in template.
+
+Replace starting/closing tag '</>' by customPrefix/customSuffix '{/}', {% and %} works better with jss-css-formatter:
+
+```javascript
+// for express
+app.set('view options', {
+    customPrefix: '{',
+    customSuffix: '}'
+});
+```
 
 This project uses [JSDoc](http://usejsdoc.org/). For the full public API
 documentation, clone the repository and run `npm run doc`. This will run JSDoc

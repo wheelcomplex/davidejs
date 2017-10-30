@@ -45,6 +45,15 @@ delimiter. In this document, all tags are shown using the `%` delimiter, which
 is the default. You can, however, change that to your liking. See
 https://github.com/mde/ejs#custom-delimiters for more information on how to
 change it.
+replace starting/closing tag '</>' by customPrefix/customSuffix '{/}', {% and %} works better with jss-css-formatter:
+
+```javascript
+// for express
+app.set('view options', {
+    customPrefix: '{',
+    customSuffix: '}'
+});
+```
 
 Starting tags
 -------------
